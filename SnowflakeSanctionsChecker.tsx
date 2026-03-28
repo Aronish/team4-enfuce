@@ -23,10 +23,10 @@
 import { useState, useRef, useCallback } from "react";
 
 // ── Configuration ─────────────────────────────────────────────────────────────
-const SNOWFLAKE_ACCOUNT = import.meta.env.VITE_SNOWFLAKE_ACCOUNT;   // e.g. "xy12345.eu-west-1"
-const SNOWFLAKE_DATABASE = import.meta.env.VITE_SNOWFLAKE_DATABASE;             // e.g. "COMPLIANCE_DB"
-const SNOWFLAKE_SCHEMA = import.meta.env.VITE_SNOWFLAKE_SCHEMA;                 // e.g. "PUBLIC"
-const SNOWFLAKE_AGENT = import.meta.env.VITE_SNOWFLAKE_AGENT;              // e.g. "SANCTIONS_AGENT"
+const SNOWFLAKE_ACCOUNT = import.meta.env.VITE_SNOWFLAKE_ACCOUNT;
+const SNOWFLAKE_DATABASE = import.meta.env.VITE_SNOWFLAKE_DATABASE;
+const SNOWFLAKE_SCHEMA = import.meta.env.VITE_SNOWFLAKE_SCHEMA;
+const SNOWFLAKE_AGENT = import.meta.env.VITE_SNOWFLAKE_AGENT;
 const SNOWFLAKE_PAT = import.meta.env.VITE_SNOWFLAKE_PAT;
 
 const AGENT_URL =
@@ -123,6 +123,9 @@ function parseFinalResponse(data: string): {
 // ── Main component ────────────────────────────────────────────────────────────
 export default function SanctionsChecker() {
   const [name, setName] = useState("");
+  const [placeOfBirth, setPlaceOfBirth] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
+  const [otherData, setOtherData] = useState("");
   const [status, setStatus] = useState<CheckStatus>("idle");
  
   const [result, setResult] = useState<string>("");
@@ -149,7 +152,18 @@ export default function SanctionsChecker() {
     setDebugLog([]);
     abortRef.current = false;
  
-    const prompt = `Check the name "${name.trim()}" against sanctions lists and PEP (Politically Exposed Person) databases. Provide a clear summary of any matches found, including the list name, match confidence, and any relevant details. If no matches are found, state that clearly.`;
+    let prompt = `Check the following subject against sanctions lists and PEP (Politically Exposed Person) databases. Name: ${name.trim()}`;
+    if (dateOfBirth.trim()) {
+      prompt += `, Date of Birth: ${dateOfBirth.trim()}`;
+    }
+    if (placeOfBirth.trim()) {
+      prompt += `, Place of Birth: ${placeOfBirth.trim()}`;
+    }
+    if (otherData.trim()) {
+      prompt += `, Other Information: ${otherData.trim()}`;
+    }
+    prompt += ". Provide a clear summary of any matches found, including the list name, match confidence, and any relevant details. If no matches are found, state that clearly.";
+    console.log(prompt);
  
     const body = {
       stream: true,
@@ -228,6 +242,9 @@ export default function SanctionsChecker() {
     setErrorMsg("");
     setDebugLog([]);
     setName("");
+    setPlaceOfBirth("");
+    setDateOfBirth("");
+    setOtherData("");
   };
  
   const isLoading = status === "loading";
@@ -268,21 +285,79 @@ export default function SanctionsChecker() {
  
           {/* Input */}
           <section style={styles.inputSection}>
-            <label style={styles.label} htmlFor="name-input">Subject Name</label>
-            <p style={styles.hint}>Enter the full name of the individual or entity to screen.</p>
+            <label style={styles.label}>Subject Details</label>
+            <p style={styles.hint}>Enter information about the individual or entity to screen. Only name is required.</p>
+ 
+            {/* Name + button row */}
             <div style={styles.inputRow}>
-              <input
-                id="name-input"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && !isLoading && handleCheck()}
-                placeholder="e.g. John Smith"
-                disabled={isLoading}
-                style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
-                autoComplete="off"
-                spellCheck={false}
-              />
+              <div style={styles.inputGroup}>
+                <label style={styles.fieldLabel} htmlFor="name-input">Full Name <span style={styles.required}>*</span></label>
+                <input
+                  id="name-input"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && !isLoading && handleCheck()}
+                  placeholder="e.g. John Smith"
+                  disabled={isLoading}
+                  style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+            </div>
+ 
+            {/* Secondary fields row */}
+            <div style={styles.twoColRow}>
+              <div style={styles.inputGroup}>
+                <label style={styles.fieldLabel} htmlFor="pob-input">Place of Birth</label>
+                <input
+                  id="pob-input"
+                  type="text"
+                  value={placeOfBirth}
+                  onChange={(e) => setPlaceOfBirth(e.target.value)}
+                  placeholder="e.g. Berlin, Germany"
+                  disabled={isLoading}
+                  style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+              <div style={styles.inputGroup}>
+                <label style={styles.fieldLabel} htmlFor="dob-input">Date of Birth</label>
+                <input
+                  id="dob-input"
+                  type="text"
+                  value={dateOfBirth}
+                  onChange={(e) => setDateOfBirth(e.target.value)}
+                  placeholder="e.g. 1955-03-21"
+                  disabled={isLoading}
+                  style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+            </div>
+ 
+            {/* Other data + button row */}
+            <div style={styles.inputRow}>
+              <div style={styles.inputGroup}>
+                <label style={styles.fieldLabel} htmlFor="other-input">Additional Information</label>
+                <input
+                  id="other-input"
+                  type="text"
+                  value={otherData}
+                  onChange={(e) => setOtherData(e.target.value)}
+                  placeholder="e.g. nationality, ID number, aliases…"
+                  disabled={isLoading}
+                  style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+            </div>
+ 
+            <div style={styles.submitRow}>
               <button
                 onClick={handleCheck}
                 disabled={isLoading || !name.trim()}
@@ -290,7 +365,7 @@ export default function SanctionsChecker() {
               >
                 {isLoading
                   ? <span style={styles.spinnerWrap}><span style={styles.spinner} />Checking…</span>
-                  : "Screen"}
+                  : "Screen Subject"}
               </button>
             </div>
           </section>
@@ -434,10 +509,15 @@ const styles: Record<string, React.CSSProperties> = {
   debugToggleActive: { color: "#F59E0B", borderColor: "rgba(245,158,11,0.4)", background: "rgba(245,158,11,0.06)" },
   main: { flex: 1, display: "flex", flexDirection: "column", alignItems: "center", padding: "48px 24px", gap: 16 },
   card: { width: "100%", maxWidth: 680, background: "#111827", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 12, padding: "32px 36px", boxShadow: "0 4px 32px rgba(0,0,0,0.4)" },
-  inputSection: { display: "flex", flexDirection: "column", gap: 8 },
+  inputSection: { display: "flex", flexDirection: "column", gap: 12 },
   label: { fontSize: 13, fontWeight: 600, color: "#94A3B8", letterSpacing: "0.08em", textTransform: "uppercase" },
   hint: { margin: 0, fontSize: 13, color: "#475569" },
-  inputRow: { display: "flex", gap: 10, marginTop: 4 },
+  inputRow: { display: "flex", gap: 10 },
+  twoColRow: { display: "flex", gap: 10 },
+  inputGroup: { display: "flex", flexDirection: "column", gap: 5, flex: 1 },
+  fieldLabel: { fontSize: 11, fontWeight: 600, color: "#64748B", letterSpacing: "0.06em", textTransform: "uppercase" },
+  required: { color: "#00BEFF" },
+  submitRow: { display: "flex", justifyContent: "flex-end", marginTop: 4 },
   input: { flex: 1, background: "#0D1117", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, padding: "11px 16px", fontSize: 15, color: "#E2E8F0", fontFamily: "'DM Sans', sans-serif", outline: "none" },
   inputDisabled: { opacity: 0.5, cursor: "not-allowed" },
   button: { background: "#00BEFF", color: "#0A0F1E", border: "none", borderRadius: 8, padding: "11px 24px", fontSize: 14, fontWeight: 600, fontFamily: "'DM Sans', sans-serif", cursor: "pointer", whiteSpace: "nowrap" },
