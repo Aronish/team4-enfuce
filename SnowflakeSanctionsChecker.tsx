@@ -123,7 +123,7 @@ function parseFinalResponse(data: string): {
 // ── Main component ────────────────────────────────────────────────────────────
 export default function SanctionsChecker() {
   const [name, setName] = useState("");
-  const [placeOfBirth, setPlaceOfBirth] = useState("");
+  const [country, setCountry] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [otherData, setOtherData] = useState("");
   const [status, setStatus] = useState<CheckStatus>("idle");
@@ -156,8 +156,8 @@ export default function SanctionsChecker() {
     if (dateOfBirth.trim()) {
       prompt += `, Date of Birth: ${dateOfBirth.trim()}`;
     }
-    if (placeOfBirth.trim()) {
-      prompt += `, Place of Birth: ${placeOfBirth.trim()}`;
+    if (country.trim()) {
+      prompt += `, Country/Countries: ${country.trim()}`;
     }
     if (otherData.trim()) {
       prompt += `, Other Information: ${otherData.trim()}`;
@@ -230,7 +230,7 @@ export default function SanctionsChecker() {
       setErrorMsg(err instanceof Error ? err.message : String(err));
       setStatus("error");
     }
-  }, [name, dateOfBirth, placeOfBirth, otherData]);
+  }, [name, dateOfBirth, country, otherData]);
  
   const handleReset = () => {
     abortRef.current = true;
@@ -242,7 +242,7 @@ export default function SanctionsChecker() {
     setErrorMsg("");
     setDebugLog([]);
     setName("");
-    setPlaceOfBirth("");
+    setCountry("");
     setDateOfBirth("");
     setOtherData("");
   };
@@ -310,12 +310,12 @@ export default function SanctionsChecker() {
             {/* Secondary fields row */}
             <div style={styles.twoColRow}>
               <div style={styles.inputGroup}>
-                <label style={styles.fieldLabel} htmlFor="pob-input">Place of Birth</label>
+                <label style={styles.fieldLabel} htmlFor="pob-input">Country/Countries</label>
                 <input
                   id="pob-input"
                   type="text"
-                  value={placeOfBirth}
-                  onChange={(e) => setPlaceOfBirth(e.target.value)}
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
                   placeholder="e.g. Berlin, Germany"
                   disabled={isLoading}
                   style={{ ...styles.input, ...(isLoading ? styles.inputDisabled : {}) }}
