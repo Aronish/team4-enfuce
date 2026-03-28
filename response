@@ -1,0 +1,2062 @@
+response.thinking.delta
+
+{
+  "content_index": 0,
+  "sequence_number": 1,
+  "text": "I will use cortex search to find relevant documents to this question."
+}
+
+response.thinking
+
+{
+  "content_index": 0,
+  "sequence_number": 2,
+  "text": "I will use cortex search to find relevant documents to this question."
+}
+
+response.status
+
+{
+  "message": "Choosing data sources to use",
+  "sequence_number": 3,
+  "status": "extracting_tool_calls"
+}
+
+response.status
+
+{
+  "message": "Getting additional context",
+  "sequence_number": 4,
+  "status": "executing_tools"
+}
+
+response.tool_result.status
+
+{
+  "message": "Running EU_DATA_SEACRHTOOL",
+  "sequence_number": 5,
+  "status": "executing_tool",
+  "tool_type": "cortex_search",
+  "tool_use_id": "tooluse_ec6bcd332f284202ac1d62"
+}
+
+response.tool_use
+
+{
+  "client_side_execute": false,
+  "content_index": 1,
+  "input": {
+    "query": "Check the name \"Benjamin Netanyahu\" against sanctions lists and PEP (Politically Exposed Person) databases. Provide a clear summary of any matches found, including the list name, match confidence, and any relevant details. If no matches are found, state that clearly."
+  },
+  "name": "EU_DATA_SEACRHTOOL",
+  "sequence_number": 6,
+  "tool_use_id": "tooluse_ec6bcd332f284202ac1d62",
+  "type": "cortex_search"
+}
+
+response.tool_result.status
+
+{
+  "message": "Reviewing search results from EU_DATA_SEACRHTOOL",
+  "sequence_number": 7,
+  "status": "sending_search_results",
+  "tool_type": "cortex_search",
+  "tool_use_id": "tooluse_ec6bcd332f284202ac1d62"
+}
+
+response.tool_result
+
+{
+  "content": [
+    {
+      "json": {
+        "search_results": [
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+            "id": "cs_66750c17-7829-4e52-858a-f60dd546f77b",
+            "source_id": 0,
+            "text": "??????? ??????????? ??????? “Naftan”"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402065",
+            "id": "cs_43340d38-3093-4288-9a48-fd178b076837",
+            "source_id": 0,
+            "text": "Benjamin MBONIMPA"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+            "id": "cs_bf088ca3-7b68-4453-b682-29ca3a7315de",
+            "source_id": 0,
+            "text": "Ir?nas Isl?ma Republikas  ties?baizsardz?bas sp?ki"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:159:0069:0085:EN:PDF",
+            "id": "cs_652c7130-25ae-4950-a634-1cf4085a610b",
+            "source_id": 0,
+            "text": "Meherez ben Ahdoud ben Amdouni"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2023.022.01.0008.01.ENG&toc=OJ%3AL%3A2023%3A022%3ATOC",
+            "id": "cs_d3b6a89d-9133-4fa7-bdec-6d94fd1e2b38",
+            "source_id": 0,
+            "text": "Sofiene Ben Habib Ben Haj Hamda BEN ALI"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2019.098.01.0001.01.ENG&toc=OJ:L:2019:098:TOC",
+            "id": "cs_58796a8f-7b95-401a-a49d-fe52a18731e7",
+            "source_id": 0,
+            "text": "Poli?ia informatic?"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=OJ:L_202401073",
+            "id": "cs_1d6b63f1-82ee-4e31-9a22-5ded81a9271b",
+            "source_id": 0,
+            "text": "?????????? Qassam"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.124.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A124I%3ATOC",
+            "id": "cs_1be86b9e-e3bc-4db3-b163-9b59959e76ce",
+            "source_id": 0,
+            "text": "Il-?abs ta’ Fashafouyeh"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:218:0001:0003:EN:PDF",
+            "id": "cs_9d8af129-1804-4fe1-bfe0-da9ca1c5c68c",
+            "source_id": 0,
+            "text": "Politisk?s droš?bas direktor?ts [S?rija]"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2023_228_I_0001",
+            "id": "cs_52583e41-7dea-4413-aff1-961184277879",
+            "source_id": 0,
+            "text": "??????? Zahedan"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1529",
+            "id": "cs_8d224b6e-56cf-4f4e-911c-2cfa730d0423",
+            "source_id": 0,
+            "text": "Bes (hudi?)"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1591",
+            "id": "cs_7d207ac2-35df-4767-9149-b73485b024f1",
+            "source_id": 0,
+            "text": "Uladzimir A?axandravi? DAVYDAV"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+            "id": "cs_66c9fb86-e66b-4e32-add1-9ffc003cbeb4",
+            "source_id": 0,
+            "text": "Societatea public? pe ac?iuni Positive Group"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+            "id": "cs_aec723b1-16df-4380-a128-f882b79223e5",
+            "source_id": 0,
+            "text": "Konstantin A?bertovi? FEDORENKO"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0111&from=EN",
+            "id": "cs_64cf31f6-8097-4f81-abf6-ef9ee53c0c02",
+            "source_id": 0,
+            "text": "Habib Ben Kaddour Ben Mustapha BEN ZAKIR"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32020R0716&from=EN",
+            "id": "cs_5748f71d-0420-4f32-846c-857409ecfddc",
+            "source_id": 0,
+            "text": "Mohammad Ibrahim AL?SHA'AR"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+            "id": "cs_78d362ad-fbbe-4475-a172-c1442f869f91",
+            "source_id": 0,
+            "text": "??????? ??????????? ??????? ‘Managing Company of Holding “Belkommunmash”’"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202501476",
+            "id": "cs_f5aa7d68-0478-4da8-83d8-95cb3425d136",
+            "source_id": 0,
+            "text": "JSC “Ploshchad”"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+            "id": "cs_8a8fbd44-bc1c-496a-b762-fe21e2a2a820",
+            "source_id": 0,
+            "text": "Poli?ia  iranian? a moralit??ii"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0571",
+            "id": "cs_7702632a-40bc-4f1f-ab7d-14fbf3db2329",
+            "source_id": 0,
+            "text": "Michail Igorevi? Polubojarinov"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400952",
+            "id": "cs_feeb2041-0c4e-4d2e-a8c3-2beed795bbef",
+            "source_id": 0,
+            "text": "I?nar Irfanovi? Basyrov"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2008:161:0025:0027:EN:PDF",
+            "id": "cs_4c19f914-26b2-4f05-ae72-a359dccf01ab",
+            "source_id": 0,
+            "text": "Ismael"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.124.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A124I%3ATOC",
+            "id": "cs_17f0ea7f-8f52-4c61-85c9-a41c247aa29e",
+            "source_id": 0,
+            "text": "?abs ta’ Greater Tehran"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+            "id": "cs_efd782d7-f9f7-4f3d-90a5-a1693fc90f01",
+            "source_id": 0,
+            "text": "Zamid Alijevi? ?ALAJEV"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=OJ:L_202401073",
+            "id": "cs_0405f651-27d2-4317-b680-913aa09bd65f",
+            "source_id": 0,
+            "text": "?????? Nukhba"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2023_228_I_0001",
+            "id": "cs_6fce050e-3705-429f-960e-88467a4b886c",
+            "source_id": 0,
+            "text": "???????? Zahedan"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0379",
+            "id": "cs_1262c9a8-316e-4183-8c8c-ffc455c853b5",
+            "source_id": 0,
+            "text": "Ir?nas Isl?ma Republikas ties?baizsardz?bas sp?ku (LEF)  Sadarb?bas fonds"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2023.022.01.0008.01.ENG&toc=OJ%3AL%3A2023%3A022%3ATOC",
+            "id": "cs_8fc85dd9-2b08-4acf-a7f5-9df741f14f84",
+            "source_id": 0,
+            "text": "Mehdi Ben Tijani Ben Haj Hamda Ben Haj Hassen BEN ALI"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2430",
+            "id": "cs_94b98932-824d-4827-b667-1bb1a0f6eafc",
+            "source_id": 0,
+            "text": "Yousef ABOUTALEBI"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.099.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A099I%3ATOC",
+            "id": "cs_140f48c3-acfe-4591-9d56-7101f156c7ea",
+            "source_id": 0,
+            "text": "Eritr?jos Vyriausyb?s nacionalin? saugumo agent?ra"
+          }
+        ],
+        "search_results_persist": {}
+      },
+      "type": "json"
+    }
+  ],
+  "content_index": 2,
+  "name": "EU_DATA_SEACRHTOOL",
+  "sequence_number": 8,
+  "status": "success",
+  "tool_use_id": "tooluse_ec6bcd332f284202ac1d62",
+  "type": "cortex_search"
+}
+
+response.status
+
+{
+  "message": "Reviewing the results",
+  "sequence_number": 9,
+  "status": "reasoning_agent_stop"
+}
+
+response.status
+
+{
+  "message": "Rethinking the plan",
+  "sequence_number": 10,
+  "status": "reevaluating_plan"
+}
+
+response.status
+
+{
+  "message": "Planning the next steps",
+  "sequence_number": 11,
+  "status": "planning"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 12,
+  "text": "Let"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 13,
+  "text": " me"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 14,
+  "text": " try"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 15,
+  "text": " another"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 16,
+  "text": " search"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 17,
+  "text": " with more"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 18,
+  "text": " specific terms"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 19,
+  "text": " to"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 20,
+  "text": " find any"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 21,
+  "text": " sanctions"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 22,
+  "text": " or"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 23,
+  "text": " P"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 24,
+  "text": "EP"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 25,
+  "text": " listings"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 26,
+  "text": " for"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 27,
+  "text": " Benjamin"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 28,
+  "text": " Netanyahu"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 3,
+  "sequence_number": 29,
+  "text": "."
+}
+
+response.thinking
+
+{
+  "content_index": 3,
+  "sequence_number": 30,
+  "text": "Let me try another search with more specific terms to find any sanctions or PEP listings for Benjamin Netanyahu."
+}
+
+response.status
+
+{
+  "message": "Choosing data sources to use",
+  "sequence_number": 31,
+  "status": "extracting_tool_calls"
+}
+
+response.status
+
+{
+  "message": "Getting additional context",
+  "sequence_number": 32,
+  "status": "executing_tools"
+}
+
+response.tool_result.status
+
+{
+  "message": "Running EU_DATA_SEACRHTOOL",
+  "sequence_number": 33,
+  "status": "executing_tool",
+  "tool_type": "cortex_search",
+  "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt"
+}
+
+response.tool_use
+
+{
+  "client_side_execute": false,
+  "content_index": 4,
+  "input": {
+    "agentic_search": false,
+    "query": "Benjamin Netanyahu Israel Prime Minister sanctions PEP"
+  },
+  "name": "EU_DATA_SEACRHTOOL",
+  "sequence_number": 34,
+  "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt",
+  "type": "cortex_search"
+}
+
+response.tool_result.status
+
+{
+  "message": "Reviewing search results from EU_DATA_SEACRHTOOL",
+  "sequence_number": 35,
+  "status": "sending_search_results",
+  "tool_type": "cortex_search",
+  "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt"
+}
+
+response.tool_result
+
+{
+  "content": [
+    {
+      "json": {
+        "search_results": [
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "1"
+            },
+            "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:075:0008:0010:EN:PDF",
+            "id": "cs_4b1a465e-d790-4844-ae1c-2d4a5f9855c1",
+            "source_id": 0,
+            "text": "Israel"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://press.un.org/en/2025/sc16113.doc.htm",
+            "id": "cs_209c91a1-06eb-4d67-8339-56129b07600e",
+            "source_id": 0,
+            "text": "G-Pèp"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401960",
+            "id": "cs_a73342a1-6c0c-458b-a842-2f0035f26b8b",
+            "source_id": 0,
+            "text": "Ferma lui Moshe"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+            "id": "cs_bce7fbaf-716a-43bf-8f91-33f42720b566",
+            "source_id": 0,
+            "text": "Iraanse zedenpolitie"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2023.043.01.0001.01.ENG&toc",
+            "id": "cs_4e5f579a-2c7d-4865-96ab-9c0715b3efc0",
+            "source_id": 0,
+            "text": "Ibrahim Hasan Tali’A ’Asiri"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1139",
+            "id": "cs_a761bb00-d114-47f6-af60-7a8ef56e78a2",
+            "source_id": 0,
+            "text": "Meri Albdelfattah Zgbye"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0111&from=EN",
+            "id": "cs_f637a5c2-1c48-433c-ad52-6da722149010",
+            "source_id": 0,
+            "text": "Habib Ben Kaddour Ben Mustapha BEN ZAKIR"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401033",
+            "id": "cs_2785a55c-e492-4d3c-9a39-991efebcb920",
+            "source_id": 0,
+            "text": "Mahmoud SALARKIA"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2023.043.01.0001.01.ENG&toc",
+            "id": "cs_07738d93-71a7-4698-9703-06fe2edffc33",
+            "source_id": 0,
+            "text": "Salahudin"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2015_264_R_0002&from=EN",
+            "id": "cs_50c3b136-881e-4566-90c8-31a89289cb90",
+            "source_id": 0,
+            "text": "Boubaker el Hakim"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+            "id": "cs_dbc68c76-629a-4afd-83d6-8c7b037f3fc2",
+            "source_id": 0,
+            "text": "Mahmoud Ibrahim Said"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+            "id": "cs_42555aba-0d7c-44ca-bd1c-6533a4628d14",
+            "source_id": 0,
+            "text": "???????? ?????????? ????????? „Naftan“"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+            "id": "cs_edfc4745-4ae3-4a2d-8bda-c416bdfae751",
+            "source_id": 0,
+            "text": "Mahmoud Ibrahim Sa'eed"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2007:186:0024:0028:EN:PDF",
+            "id": "cs_7172e273-965e-455f-9d42-010bfca277e6",
+            "source_id": 0,
+            "text": "Abou Ismail el Jendoubi"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400328",
+            "id": "cs_ae785ebd-0ae5-4032-8fbd-9559e815a1be",
+            "source_id": 0,
+            "text": "Abdul Salam Bhutvi"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1505",
+            "id": "cs_5941aec1-6808-4415-8567-352eeceaeaaf",
+            "source_id": 0,
+            "text": "Fatah Revolutionary Council"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2015_339_R_0003&from=EN",
+            "id": "cs_0869c797-6da0-4019-bf09-b0e81c11b158",
+            "source_id": 0,
+            "text": "Haroun Geye"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018R0282&from=EN",
+            "id": "cs_efa51c57-4ecb-41c0-a32f-d09c103d0ea8",
+            "source_id": 0,
+            "text": "Ammar Sharif"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.001.01.0009.01.ENG&toc=OJ%3AL%3A2022%3A001%3ATOC",
+            "id": "cs_8b797e2e-cfc6-47a1-a2db-941054e6be0a",
+            "source_id": 0,
+            "text": "Achraf Ben Fathi Ben Mabrouk Guizani"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+            "id": "cs_044d8e2e-955a-4115-a578-93820ffa90b2",
+            "source_id": 0,
+            "text": "Ve?ejná akciová spole?nost „Naftan“"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.LI.2020.334.01.0001.01.ENG&toc=OJ:L:2020:334I:TOC",
+            "id": "cs_f717a330-c003-46b5-913a-82a1b9d16b6e",
+            "source_id": 0,
+            "text": "Jamal Hussein Hassan Zeiniye"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0429",
+            "id": "cs_2ee53bd1-0a4d-4694-82c6-8e770adc9c64",
+            "source_id": 0,
+            "text": "Yaakov KEDMI"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401746",
+            "id": "cs_8076dd14-d9e6-4a8f-83cb-33dfcd2127db",
+            "source_id": 0,
+            "text": "Ibrahim Mahomedovich ACHMATOV"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.132.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A132I%3ATOC",
+            "id": "cs_0da5f8cb-82fc-411b-82c2-27cbf70f04c3",
+            "source_id": 0,
+            "text": "P’do"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402065",
+            "id": "cs_9ac2275e-0280-432c-86b0-902d46dc8c92",
+            "source_id": 0,
+            "text": "Benjamin MBONIMPA"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+            "id": "cs_6f57e7c6-3f4d-4bdd-be73-c8e3b7b97ea8",
+            "source_id": 0,
+            "text": "Mahmoud Ibraheem Said"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0429",
+            "id": "cs_c0954b64-d1ce-48dd-a4da-a23dafc60cc4",
+            "source_id": 0,
+            "text": "Société par actions \"Shvabe\""
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+            "id": "cs_dba34135-d1f6-4075-b4cc-a29792eade14",
+            "source_id": 0,
+            "text": "Irans moralpoliti"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32020R0510&from=EN",
+            "id": "cs_445213f0-5599-4379-a77b-4fe174b9dcf6",
+            "source_id": 0,
+            "text": "Malek Ajdar SHARIFI"
+          },
+          {
+            "columns": {
+              "@CONFIDENCE_SCORE": "0"
+            },
+            "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202501256",
+            "id": "cs_7f153e56-86a4-43aa-ac45-55c94cad7298",
+            "source_id": 0,
+            "text": "Miqdad Lu’ay FATIHA"
+          }
+        ],
+        "search_results_persist": {}
+      },
+      "type": "json"
+    }
+  ],
+  "content_index": 5,
+  "name": "EU_DATA_SEACRHTOOL",
+  "sequence_number": 36,
+  "status": "success",
+  "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt",
+  "type": "cortex_search"
+}
+
+response.status
+
+{
+  "message": "Reviewing the results",
+  "sequence_number": 37,
+  "status": "reasoning_agent_stop"
+}
+
+response.status
+
+{
+  "message": "Rethinking the plan",
+  "sequence_number": 38,
+  "status": "reevaluating_plan"
+}
+
+response.status
+
+{
+  "message": "Planning the next steps",
+  "sequence_number": 39,
+  "status": "planning"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 40,
+  "text": "\nAfter"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 41,
+  "text": " searching"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 42,
+  "text": " through"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 43,
+  "text": " the EU"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 44,
+  "text": " sanctions"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 45,
+  "text": " an"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 46,
+  "text": "d P"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 47,
+  "text": "E"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 48,
+  "text": "P"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 49,
+  "text": " databases"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 50,
+  "text": " using"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 51,
+  "text": " the EU"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 52,
+  "text": "_DATA_"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 53,
+  "text": "SEACRHT"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 54,
+  "text": "OOL,"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 55,
+  "text": " I can"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 56,
+  "text": " now"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 57,
+  "text": " provide"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 58,
+  "text": " a"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 59,
+  "text": " summary of the findings"
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 60,
+  "text": "."
+}
+
+response.thinking.delta
+
+{
+  "content_index": 6,
+  "sequence_number": 61,
+  "text": "\n"
+}
+
+response.thinking
+
+{
+  "content_index": 6,
+  "sequence_number": 62,
+  "text": "\nAfter searching through the EU sanctions and PEP databases using the EU_DATA_SEACRHTOOL, I can now provide a summary of the findings.\n"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 63,
+  "text": "Base"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 64,
+  "text": "d on the"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 65,
+  "text": " searches"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 66,
+  "text": " conducted in"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 67,
+  "text": " the EU sanctions"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 68,
+  "text": " and PEP"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 69,
+  "text": " databases, no"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 70,
+  "text": " direct"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 71,
+  "text": " matches were found for"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 72,
+  "text": " Benjamin"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 73,
+  "text": " Netanyahu"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 74,
+  "text": " in"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 75,
+  "text": " current"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 76,
+  "text": " EU sanctions lists"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 77,
+  "text": " or PEP"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 78,
+  "text": " databases"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 79,
+  "text": ". While"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 80,
+  "text": " he"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 81,
+  "text": " woul"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 82,
+  "text": "d typically"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 83,
+  "text": " be considere"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 84,
+  "text": "d a"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 85,
+  "text": " Politically Exposed Person"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 86,
+  "text": " due"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 87,
+  "text": " to his position"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 88,
+  "text": " as Prime Minister of"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 89,
+  "text": " Israel, there are"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 90,
+  "text": " no specific"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 91,
+  "text": " sanctions or"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 92,
+  "text": " restrictions"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 93,
+  "text": " liste"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 94,
+  "text": "d against him in"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 95,
+  "text": " the EU databases at"
+}
+
+response.text.delta
+
+{
+  "content_index": 7,
+  "sequence_number": 96,
+  "text": " this time."
+}
+
+response.text
+
+{
+  "content_index": 7,
+  "sequence_number": 97,
+  "text": "Based on the searches conducted in the EU sanctions and PEP databases, no direct matches were found for Benjamin Netanyahu in current EU sanctions lists or PEP databases. While he would typically be considered a Politically Exposed Person due to his position as Prime Minister of Israel, there are no specific sanctions or restrictions listed against him in the EU databases at this time."
+}
+
+response.suggested_queries
+
+{
+  "content_index": 8,
+  "sequence_number": 98,
+  "suggested_queries": [
+    {
+      "query": "Are there any sanctions against current Israeli government officials?"
+    },
+    {
+      "query": "What criteria are used to determine PEP status in the EU database?"
+    }
+  ]
+}
+
+response.status
+
+{
+  "message": "Reviewing the results",
+  "sequence_number": 99,
+  "status": "reasoning_agent_stop"
+}
+
+response.status
+
+{
+  "message": "Forming the answer",
+  "sequence_number": 100,
+  "status": "proceeding_to_answer"
+}
+
+response
+
+{
+  "content": [
+    {
+      "thinking": {
+        "text": "I will use cortex search to find relevant documents to this question."
+      },
+      "type": "thinking"
+    },
+    {
+      "tool_use": {
+        "client_side_execute": false,
+        "input": {
+          "query": "Check the name \"Benjamin Netanyahu\" against sanctions lists and PEP (Politically Exposed Person) databases. Provide a clear summary of any matches found, including the list name, match confidence, and any relevant details. If no matches are found, state that clearly."
+        },
+        "name": "EU_DATA_SEACRHTOOL",
+        "tool_use_id": "tooluse_ec6bcd332f284202ac1d62",
+        "type": "cortex_search"
+      },
+      "type": "tool_use"
+    },
+    {
+      "tool_result": {
+        "content": [
+          {
+            "json": {
+              "search_results": [
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+                  "id": "cs_66750c17-7829-4e52-858a-f60dd546f77b",
+                  "source_id": 0,
+                  "text": "??????? ??????????? ??????? “Naftan”"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402065",
+                  "id": "cs_43340d38-3093-4288-9a48-fd178b076837",
+                  "source_id": 0,
+                  "text": "Benjamin MBONIMPA"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+                  "id": "cs_bf088ca3-7b68-4453-b682-29ca3a7315de",
+                  "source_id": 0,
+                  "text": "Ir?nas Isl?ma Republikas  ties?baizsardz?bas sp?ki"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:159:0069:0085:EN:PDF",
+                  "id": "cs_652c7130-25ae-4950-a634-1cf4085a610b",
+                  "source_id": 0,
+                  "text": "Meherez ben Ahdoud ben Amdouni"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2023.022.01.0008.01.ENG&toc=OJ%3AL%3A2023%3A022%3ATOC",
+                  "id": "cs_d3b6a89d-9133-4fa7-bdec-6d94fd1e2b38",
+                  "source_id": 0,
+                  "text": "Sofiene Ben Habib Ben Haj Hamda BEN ALI"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2019.098.01.0001.01.ENG&toc=OJ:L:2019:098:TOC",
+                  "id": "cs_58796a8f-7b95-401a-a49d-fe52a18731e7",
+                  "source_id": 0,
+                  "text": "Poli?ia informatic?"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=OJ:L_202401073",
+                  "id": "cs_1d6b63f1-82ee-4e31-9a22-5ded81a9271b",
+                  "source_id": 0,
+                  "text": "?????????? Qassam"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.124.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A124I%3ATOC",
+                  "id": "cs_1be86b9e-e3bc-4db3-b163-9b59959e76ce",
+                  "source_id": 0,
+                  "text": "Il-?abs ta’ Fashafouyeh"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2011:218:0001:0003:EN:PDF",
+                  "id": "cs_9d8af129-1804-4fe1-bfe0-da9ca1c5c68c",
+                  "source_id": 0,
+                  "text": "Politisk?s droš?bas direktor?ts [S?rija]"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2023_228_I_0001",
+                  "id": "cs_52583e41-7dea-4413-aff1-961184277879",
+                  "source_id": 0,
+                  "text": "??????? Zahedan"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1529",
+                  "id": "cs_8d224b6e-56cf-4f4e-911c-2cfa730d0423",
+                  "source_id": 0,
+                  "text": "Bes (hudi?)"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1591",
+                  "id": "cs_7d207ac2-35df-4767-9149-b73485b024f1",
+                  "source_id": 0,
+                  "text": "Uladzimir A?axandravi? DAVYDAV"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+                  "id": "cs_66c9fb86-e66b-4e32-add1-9ffc003cbeb4",
+                  "source_id": 0,
+                  "text": "Societatea public? pe ac?iuni Positive Group"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+                  "id": "cs_aec723b1-16df-4380-a128-f882b79223e5",
+                  "source_id": 0,
+                  "text": "Konstantin A?bertovi? FEDORENKO"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0111&from=EN",
+                  "id": "cs_64cf31f6-8097-4f81-abf6-ef9ee53c0c02",
+                  "source_id": 0,
+                  "text": "Habib Ben Kaddour Ben Mustapha BEN ZAKIR"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32020R0716&from=EN",
+                  "id": "cs_5748f71d-0420-4f32-846c-857409ecfddc",
+                  "source_id": 0,
+                  "text": "Mohammad Ibrahim AL?SHA'AR"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+                  "id": "cs_78d362ad-fbbe-4475-a172-c1442f869f91",
+                  "source_id": 0,
+                  "text": "??????? ??????????? ??????? ‘Managing Company of Holding “Belkommunmash”’"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202501476",
+                  "id": "cs_f5aa7d68-0478-4da8-83d8-95cb3425d136",
+                  "source_id": 0,
+                  "text": "JSC “Ploshchad”"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+                  "id": "cs_8a8fbd44-bc1c-496a-b762-fe21e2a2a820",
+                  "source_id": 0,
+                  "text": "Poli?ia  iranian? a moralit??ii"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0571",
+                  "id": "cs_7702632a-40bc-4f1f-ab7d-14fbf3db2329",
+                  "source_id": 0,
+                  "text": "Michail Igorevi? Polubojarinov"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400952",
+                  "id": "cs_feeb2041-0c4e-4d2e-a8c3-2beed795bbef",
+                  "source_id": 0,
+                  "text": "I?nar Irfanovi? Basyrov"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2008:161:0025:0027:EN:PDF",
+                  "id": "cs_4c19f914-26b2-4f05-ae72-a359dccf01ab",
+                  "source_id": 0,
+                  "text": "Ismael"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.124.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A124I%3ATOC",
+                  "id": "cs_17f0ea7f-8f52-4c61-85c9-a41c247aa29e",
+                  "source_id": 0,
+                  "text": "?abs ta’ Greater Tehran"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1216",
+                  "id": "cs_efd782d7-f9f7-4f3d-90a5-a1693fc90f01",
+                  "source_id": 0,
+                  "text": "Zamid Alijevi? ?ALAJEV"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/en/TXT/PDF/?uri=OJ:L_202401073",
+                  "id": "cs_0405f651-27d2-4317-b680-913aa09bd65f",
+                  "source_id": 0,
+                  "text": "?????? Nukhba"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2023_228_I_0001",
+                  "id": "cs_6fce050e-3705-429f-960e-88467a4b886c",
+                  "source_id": 0,
+                  "text": "???????? Zahedan"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0379",
+                  "id": "cs_1262c9a8-316e-4183-8c8c-ffc455c853b5",
+                  "source_id": 0,
+                  "text": "Ir?nas Isl?ma Republikas ties?baizsardz?bas sp?ku (LEF)  Sadarb?bas fonds"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2023.022.01.0008.01.ENG&toc=OJ%3AL%3A2023%3A022%3ATOC",
+                  "id": "cs_8fc85dd9-2b08-4acf-a7f5-9df741f14f84",
+                  "source_id": 0,
+                  "text": "Mehdi Ben Tijani Ben Haj Hamda Ben Haj Hassen BEN ALI"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2430",
+                  "id": "cs_94b98932-824d-4827-b667-1bb1a0f6eafc",
+                  "source_id": 0,
+                  "text": "Yousef ABOUTALEBI"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.099.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A099I%3ATOC",
+                  "id": "cs_140f48c3-acfe-4591-9d56-7101f156c7ea",
+                  "source_id": 0,
+                  "text": "Eritr?jos Vyriausyb?s nacionalin? saugumo agent?ra"
+                }
+              ],
+              "search_results_persist": {}
+            },
+            "type": "json"
+          }
+        ],
+        "name": "EU_DATA_SEACRHTOOL",
+        "status": "success",
+        "tool_use_id": "tooluse_ec6bcd332f284202ac1d62",
+        "type": "cortex_search"
+      },
+      "type": "tool_result"
+    },
+    {
+      "thinking": {
+        "text": "Let me try another search with more specific terms to find any sanctions or PEP listings for Benjamin Netanyahu."
+      },
+      "type": "thinking"
+    },
+    {
+      "tool_use": {
+        "client_side_execute": false,
+        "input": {
+          "agentic_search": false,
+          "query": "Benjamin Netanyahu Israel Prime Minister sanctions PEP"
+        },
+        "name": "EU_DATA_SEACRHTOOL",
+        "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt",
+        "type": "cortex_search"
+      },
+      "type": "tool_use"
+    },
+    {
+      "tool_result": {
+        "content": [
+          {
+            "json": {
+              "search_results": [
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "1"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:075:0008:0010:EN:PDF",
+                  "id": "cs_4b1a465e-d790-4844-ae1c-2d4a5f9855c1",
+                  "source_id": 0,
+                  "text": "Israel"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://press.un.org/en/2025/sc16113.doc.htm",
+                  "id": "cs_209c91a1-06eb-4d67-8339-56129b07600e",
+                  "source_id": 0,
+                  "text": "G-Pèp"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401960",
+                  "id": "cs_a73342a1-6c0c-458b-a842-2f0035f26b8b",
+                  "source_id": 0,
+                  "text": "Ferma lui Moshe"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+                  "id": "cs_bce7fbaf-716a-43bf-8f91-33f42720b566",
+                  "source_id": 0,
+                  "text": "Iraanse zedenpolitie"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2023.043.01.0001.01.ENG&toc",
+                  "id": "cs_4e5f579a-2c7d-4865-96ab-9c0715b3efc0",
+                  "source_id": 0,
+                  "text": "Ibrahim Hasan Tali’A ’Asiri"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1139",
+                  "id": "cs_a761bb00-d114-47f6-af60-7a8ef56e78a2",
+                  "source_id": 0,
+                  "text": "Meri Albdelfattah Zgbye"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0111&from=EN",
+                  "id": "cs_f637a5c2-1c48-433c-ad52-6da722149010",
+                  "source_id": 0,
+                  "text": "Habib Ben Kaddour Ben Mustapha BEN ZAKIR"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401033",
+                  "id": "cs_2785a55c-e492-4d3c-9a39-991efebcb920",
+                  "source_id": 0,
+                  "text": "Mahmoud SALARKIA"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2023.043.01.0001.01.ENG&toc",
+                  "id": "cs_07738d93-71a7-4698-9703-06fe2edffc33",
+                  "source_id": 0,
+                  "text": "Salahudin"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2015_264_R_0002&from=EN",
+                  "id": "cs_50c3b136-881e-4566-90c8-31a89289cb90",
+                  "source_id": 0,
+                  "text": "Boubaker el Hakim"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+                  "id": "cs_dbc68c76-629a-4afd-83d6-8c7b037f3fc2",
+                  "source_id": 0,
+                  "text": "Mahmoud Ibrahim Said"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+                  "id": "cs_42555aba-0d7c-44ca-bd1c-6533a4628d14",
+                  "source_id": 0,
+                  "text": "???????? ?????????? ????????? „Naftan“"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+                  "id": "cs_edfc4745-4ae3-4a2d-8bda-c416bdfae751",
+                  "source_id": 0,
+                  "text": "Mahmoud Ibrahim Sa'eed"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2007:186:0024:0028:EN:PDF",
+                  "id": "cs_7172e273-965e-455f-9d42-010bfca277e6",
+                  "source_id": 0,
+                  "text": "Abou Ismail el Jendoubi"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202400328",
+                  "id": "cs_ae785ebd-0ae5-4032-8fbd-9559e815a1be",
+                  "source_id": 0,
+                  "text": "Abdul Salam Bhutvi"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1505",
+                  "id": "cs_5941aec1-6808-4415-8567-352eeceaeaaf",
+                  "source_id": 0,
+                  "text": "Fatah Revolutionary Council"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:JOL_2015_339_R_0003&from=EN",
+                  "id": "cs_0869c797-6da0-4019-bf09-b0e81c11b158",
+                  "source_id": 0,
+                  "text": "Haroun Geye"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018R0282&from=EN",
+                  "id": "cs_efa51c57-4ecb-41c0-a32f-d09c103d0ea8",
+                  "source_id": 0,
+                  "text": "Ammar Sharif"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.001.01.0009.01.ENG&toc=OJ%3AL%3A2022%3A001%3ATOC",
+                  "id": "cs_8b797e2e-cfc6-47a1-a2db-941054e6be0a",
+                  "source_id": 0,
+                  "text": "Achraf Ben Fathi Ben Mabrouk Guizani"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.L_.2022.153.01.0001.01.ENG&toc=OJ%3AL%3A2022%3A153%3ATOC",
+                  "id": "cs_044d8e2e-955a-4115-a578-93820ffa90b2",
+                  "source_id": 0,
+                  "text": "Ve?ejná akciová spole?nost „Naftan“"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.LI.2020.334.01.0001.01.ENG&toc=OJ:L:2020:334I:TOC",
+                  "id": "cs_f717a330-c003-46b5-913a-82a1b9d16b6e",
+                  "source_id": 0,
+                  "text": "Jamal Hussein Hassan Zeiniye"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0429",
+                  "id": "cs_2ee53bd1-0a4d-4694-82c6-8e770adc9c64",
+                  "source_id": 0,
+                  "text": "Yaakov KEDMI"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401746",
+                  "id": "cs_8076dd14-d9e6-4a8f-83cb-33dfcd2127db",
+                  "source_id": 0,
+                  "text": "Ibrahim Mahomedovich ACHMATOV"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv%3AOJ.LI.2021.132.01.0001.01.ENG&toc=OJ%3AL%3A2021%3A132I%3ATOC",
+                  "id": "cs_0da5f8cb-82fc-411b-82c2-27cbf70f04c3",
+                  "source_id": 0,
+                  "text": "P’do"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402065",
+                  "id": "cs_9ac2275e-0280-432c-86b0-902d46dc8c92",
+                  "source_id": 0,
+                  "text": "Benjamin MBONIMPA"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401517",
+                  "id": "cs_6f57e7c6-3f4d-4bdd-be73-c8e3b7b97ea8",
+                  "source_id": 0,
+                  "text": "Mahmoud Ibraheem Said"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R0429",
+                  "id": "cs_c0954b64-d1ce-48dd-a4da-a23dafc60cc4",
+                  "source_id": 0,
+                  "text": "Société par actions \"Shvabe\""
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R1955",
+                  "id": "cs_dba34135-d1f6-4075-b4cc-a29792eade14",
+                  "source_id": 0,
+                  "text": "Irans moralpoliti"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32020R0510&from=EN",
+                  "id": "cs_445213f0-5599-4379-a77b-4fe174b9dcf6",
+                  "source_id": 0,
+                  "text": "Malek Ajdar SHARIFI"
+                },
+                {
+                  "columns": {
+                    "@CONFIDENCE_SCORE": "0"
+                  },
+                  "doc_id": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202501256",
+                  "id": "cs_7f153e56-86a4-43aa-ac45-55c94cad7298",
+                  "source_id": 0,
+                  "text": "Miqdad Lu’ay FATIHA"
+                }
+              ],
+              "search_results_persist": {}
+            },
+            "type": "json"
+          }
+        ],
+        "name": "EU_DATA_SEACRHTOOL",
+        "status": "success",
+        "tool_use_id": "toolu_bdrk_01QJj83zdtXEXypYyeQ1ykAt",
+        "type": "cortex_search"
+      },
+      "type": "tool_result"
+    },
+    {
+      "thinking": {
+        "text": "\nAfter searching through the EU sanctions and PEP databases using the EU_DATA_SEACRHTOOL, I can now provide a summary of the findings.\n"
+      },
+      "type": "thinking"
+    },
+    {
+      "text": "Based on the searches conducted in the EU sanctions and PEP databases, no direct matches were found for Benjamin Netanyahu in current EU sanctions lists or PEP databases. While he would typically be considered a Politically Exposed Person due to his position as Prime Minister of Israel, there are no specific sanctions or restrictions listed against him in the EU databases at this time.",
+      "type": "text"
+    },
+    {
+      "suggested_queries": [
+        {
+          "query": "Are there any sanctions against current Israeli government officials?"
+        },
+        {
+          "query": "What criteria are used to determine PEP status in the EU database?"
+        }
+      ],
+      "type": "suggested_queries"
+    }
+  ],
+  "metadata": {
+    "usage": {
+      "tokens_consumed": [
+        {
+          "context_window": 200000,
+          "input_tokens": {
+            "cache_read": 0,
+            "cache_write": 0,
+            "total": 40684,
+            "uncached": 40684
+          },
+          "model_name": "claude-3-5-sonnet",
+          "output_tokens": {
+            "total": 324
+          }
+        }
+      ]
+    }
+  },
+  "role": "assistant",
+  "schema_version": "v2",
+  "sequence_number": 101
+}
+
+done
+
+[DONE]
