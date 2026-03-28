@@ -230,7 +230,7 @@ export default function SanctionsChecker() {
       setErrorMsg(err instanceof Error ? err.message : String(err));
       setStatus("error");
     }
-  }, [name]);
+  }, [name, dateOfBirth, placeOfBirth, otherData]);
  
   const handleReset = () => {
     abortRef.current = true;
