@@ -23,16 +23,11 @@
 import { useState, useRef, useCallback } from "react";
 
 // ── Configuration ─────────────────────────────────────────────────────────────
-const SNOWFLAKE_ACCOUNT = import.meta.env.VITE_SNOWFLAKE_ACCOUNT;
-const SNOWFLAKE_DATABASE = import.meta.env.VITE_SNOWFLAKE_DATABASE;
-const SNOWFLAKE_SCHEMA = import.meta.env.VITE_SNOWFLAKE_SCHEMA;
-const SNOWFLAKE_AGENT = import.meta.env.VITE_SNOWFLAKE_AGENT;
-const SNOWFLAKE_PAT = import.meta.env.VITE_SNOWFLAKE_PAT;
-
-const AGENT_URL =
-  `https://${SNOWFLAKE_ACCOUNT}.snowflakecomputing.com` +
-  `/api/v2/databases/${SNOWFLAKE_DATABASE}/schemas/${SNOWFLAKE_SCHEMA}` +
-  `/agents/${SNOWFLAKE_AGENT}:run`;
+// The frontend no longer talks to Snowflake directly.
+// All requests go to the Hono proxy which injects the PAT server-side.
+// In production (Deno Deploy) this resolves to the same origin.
+// In local development Vite forwards /api/* to the Hono dev server (port 8000).
+const AGENT_URL = "/api/agent";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 type CheckStatus = "idle" | "loading" | "done" | "error";
@@ -171,9 +166,7 @@ export default function SanctionsChecker() {
     };
  
     const headers = {
-      Authorization: `Bearer ${SNOWFLAKE_PAT}`, // ⚠️ move to backend proxy
       Accept: "text/event-stream",
-      "X-Snowflake-Authorization-Token-Type": "PROGRAMMATIC_ACCESS_TOKEN",
     };
  
     try {
