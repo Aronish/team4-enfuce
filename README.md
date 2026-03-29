@@ -18,7 +18,7 @@ VITE_SNOWFLAKE_DATABASE=TARGETS_DEMO
 VITE_SNOWFLAKE_SCHEMA=PUBLIC
 VITE_SNOWFLAKE_AGENT=KENT_AGENT
 ```
-You can a team member for the credentials, as they won't be committed here.
+You can ask a team member for the credentials, as they won't be committed here.
 
 ### Run
 Start the tool by running `npm run dev` and navigate to `http://localhost:3000` using your preferred browser.
