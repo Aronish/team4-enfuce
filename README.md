@@ -1,4 +1,4 @@
-# team4-enfuce
+# Kent Agent
 
 ## Description
 This repository contains a light React-based front-end to make programmatic API calls to the Snowflake agentic system.
