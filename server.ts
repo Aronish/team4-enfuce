@@ -19,11 +19,11 @@ import { Hono } from "jsr:@hono/hono";
 import { serveStatic } from "jsr:@hono/hono/deno";
 
 // ── Read config from environment ──────────────────────────────────────────────
-const VITE_SNOWFLAKE_ACCOUNT   = Deno.env.get("SNOWFLAKE_ACCOUNT")   ?? "";
-const VITE_SNOWFLAKE_DATABASE  = Deno.env.get("SNOWFLAKE_DATABASE")  ?? "";
-const VITE_SNOWFLAKE_SCHEMA    = Deno.env.get("SNOWFLAKE_SCHEMA")    ?? "";
-const VITE_SNOWFLAKE_AGENT     = Deno.env.get("SNOWFLAKE_AGENT")     ?? "";
-const VITE_SNOWFLAKE_PAT       = Deno.env.get("SNOWFLAKE_PAT")       ?? "";
+const VITE_SNOWFLAKE_ACCOUNT   = Deno.env.get("VITE_SNOWFLAKE_ACCOUNT")   ?? "";
+const VITE_SNOWFLAKE_DATABASE  = Deno.env.get("VITE_SNOWFLAKE_DATABASE")  ?? "";
+const VITE_SNOWFLAKE_SCHEMA    = Deno.env.get("VITE_SNOWFLAKE_SCHEMA")    ?? "";
+const VITE_SNOWFLAKE_AGENT     = Deno.env.get("VITE_SNOWFLAKE_AGENT")     ?? "";
+const VITE_SNOWFLAKE_PAT       = Deno.env.get("VITE_SNOWFLAKE_PAT")       ?? "";
 
 const AGENT_URL =
   `https://${VITE_SNOWFLAKE_ACCOUNT}.snowflakecomputing.com` +
