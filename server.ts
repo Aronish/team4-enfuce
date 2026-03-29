@@ -19,16 +19,16 @@ import { Hono } from "jsr:@hono/hono";
 import { serveStatic } from "jsr:@hono/hono/deno";
 
 // ── Read config from environment ──────────────────────────────────────────────
-const SNOWFLAKE_ACCOUNT   = Deno.env.get("SNOWFLAKE_ACCOUNT")   ?? "";
-const SNOWFLAKE_DATABASE  = Deno.env.get("SNOWFLAKE_DATABASE")  ?? "";
-const SNOWFLAKE_SCHEMA    = Deno.env.get("SNOWFLAKE_SCHEMA")    ?? "";
-const SNOWFLAKE_AGENT     = Deno.env.get("SNOWFLAKE_AGENT")     ?? "";
-const SNOWFLAKE_PAT       = Deno.env.get("SNOWFLAKE_PAT")       ?? "";
+const VITE_SNOWFLAKE_ACCOUNT   = Deno.env.get("SNOWFLAKE_ACCOUNT")   ?? "";
+const VITE_SNOWFLAKE_DATABASE  = Deno.env.get("SNOWFLAKE_DATABASE")  ?? "";
+const VITE_SNOWFLAKE_SCHEMA    = Deno.env.get("SNOWFLAKE_SCHEMA")    ?? "";
+const VITE_SNOWFLAKE_AGENT     = Deno.env.get("SNOWFLAKE_AGENT")     ?? "";
+const VITE_SNOWFLAKE_PAT       = Deno.env.get("SNOWFLAKE_PAT")       ?? "";
 
 const AGENT_URL =
-  `https://${SNOWFLAKE_ACCOUNT}.snowflakecomputing.com` +
-  `/api/v2/databases/${SNOWFLAKE_DATABASE}/schemas/${SNOWFLAKE_SCHEMA}` +
-  `/agents/${SNOWFLAKE_AGENT}:run`;
+  `https://${VITE_SNOWFLAKE_ACCOUNT}.snowflakecomputing.com` +
+  `/api/v2/databases/${VITE_SNOWFLAKE_DATABASE}/schemas/${VITE_SNOWFLAKE_SCHEMA}` +
+  `/agents/${VITE_SNOWFLAKE_AGENT}:run`;
 
 // ── App ───────────────────────────────────────────────────────────────────────
 const app = new Hono();
@@ -41,7 +41,7 @@ const app = new Hono();
  * The PAT is injected here — the browser never sees it.
  */
 app.post("/api/agent", async (c) => {
-  if (!SNOWFLAKE_PAT) {
+  if (!VITE_SNOWFLAKE_PAT) {
     return c.json({ error: "SNOWFLAKE_PAT is not configured" }, 500);
   }
 
@@ -52,7 +52,7 @@ app.post("/api/agent", async (c) => {
     headers: {
       "Content-Type":                          "application/json",
       "Accept":                                "text/event-stream",
-      "Authorization":                         `Bearer ${SNOWFLAKE_PAT}`,
+      "Authorization":                         `Bearer ${VITE_SNOWFLAKE_PAT}`,
       "X-Snowflake-Authorization-Token-Type":  "PROGRAMMATIC_ACCESS_TOKEN",
     },
     body,
@@ -75,19 +75,22 @@ app.post("/api/agent", async (c) => {
 });
 
 // ── Static files from Vite build ──────────────────────────────────────────────
-// Use import.meta.dirname to build an absolute path — Deno Deploy's working
-// directory is not always the project root, so relative paths like "./dist"
-// can silently resolve to nothing, producing a blank MIME type response.
-const DIST = `${import.meta.dirname}/dist`;
+// Use import.meta.dirname to build an absolute path — Deno Deploy's wong cache TTL.
+app.use(
+  "/assets/*",
+  serveStatic({
+    root: "./dist",
+    // Hono's serveStatic resolves paths relative to the entrypoint file,
+    // so ./dist maps to <project-root>/dist after `deno task build`.
+    onNotFound: (_path, c) => c.notFound(),
+  })
+);
 
-// Assets (JS, CSS, images) have content-hashed filenames — long cache TTL.
-app.use("/assets/*", serveStatic({ root: DIST }));
+// All other static files (favicon, manifest, etc.)
+app.use("/*", serveStatic({ root: "./dist" }));
 
-// All other static files (favicon, manifest, robots.txt, etc.)
-app.use("/*", serveStatic({ root: DIST }));
-
-// SPA fallback — any unmatched route serves index.html so React Router can boot.
-app.get("*", serveStatic({ path: `${DIST}/index.html` }));
+// SPA fallback — any unmatched route returns index.html so React can boot.
+app.get("*", serveStatic({ path: "./dist/index.html" }));
 
 // ── Start ─────────────────────────────────────────────────────────────────────
 Deno.serve(app.fetch);
