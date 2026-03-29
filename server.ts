@@ -75,22 +75,19 @@ app.post("/api/agent", async (c) => {
 });
 
 // ── Static files from Vite build ──────────────────────────────────────────────
-// Assets (JS, CSS, images) have hashed filenames — serve with long cache TTL.
-app.use(
-  "/assets/*",
-  serveStatic({
-    root: "./dist",
-    // Hono's serveStatic resolves paths relative to the entrypoint file,
-    // so ./dist maps to <project-root>/dist after `deno task build`.
-    onNotFound: (_path, c) => c.notFound(),
-  })
-);
+// Use import.meta.dirname to build an absolute path — Deno Deploy's working
+// directory is not always the project root, so relative paths like "./dist"
+// can silently resolve to nothing, producing a blank MIME type response.
+const DIST = `${import.meta.dirname}/dist`;
 
-// All other static files (favicon, manifest, etc.)
-app.use("/*", serveStatic({ root: "./dist" }));
+// Assets (JS, CSS, images) have content-hashed filenames — long cache TTL.
+app.use("/assets/*", serveStatic({ root: DIST }));
 
-// SPA fallback — any unmatched route returns index.html so React can boot.
-app.get("*", serveStatic({ path: "./dist/index.html" }));
+// All other static files (favicon, manifest, robots.txt, etc.)
+app.use("/*", serveStatic({ root: DIST }));
+
+// SPA fallback — any unmatched route serves index.html so React Router can boot.
+app.get("*", serveStatic({ path: `${DIST}/index.html` }));
 
 // ── Start ─────────────────────────────────────────────────────────────────────
 Deno.serve(app.fetch);
